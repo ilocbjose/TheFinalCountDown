@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         
         displayLabel.text = String(COUNTDOWN)
         
+        Network.shared.getPet()
+                
     }
     
     
@@ -46,7 +48,7 @@ class ViewController: UIViewController {
         var countDown = COUNTDOWN
         
         while(countDown >= 0 && running){
-            displayLabel.text = String(countDown)
+            self.displayLabel.text = String(countDown)
             sleep(1)
             countDown -= 1
         }
