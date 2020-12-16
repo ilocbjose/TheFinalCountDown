@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class Post: Codable {
     
@@ -81,6 +82,10 @@ class Network: PicsumAPI {
             completionHandler(data!)
             
         }.resume()
+        
+        AF.request("https://picsum.photos/200/300").response { response in
+            debugPrint(response)
+        }
         
     }
     
